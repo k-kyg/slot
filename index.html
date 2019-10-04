@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Slot</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Slot</h1>
-      <div class="slot">
-        <div>
-          <div>
-            <h2 class="num1">$</h2>
-          </div>
-          <stop-button onclick="stop(1)">ストップ</stop-button>
-        </div>
-        <div>
-          <div>
-            <h2 class="num2">$</h2>
-          </div>
-          <stop-button onclick="stop(2)">ストップ</stop-button>
-        </div>
-        <div>
-          <div>
-            <h2 class="num3">$</h2>
-          </div>
-          <stop-button onclick="stop(3)">ストップ</stop-button>
-        </div>
-      </div>
-    </div>
-    <script>
-      class StopButton extends HTMLElement{
-        constructor(){
-          super();
-        }
-      }
-      customElements.define('stop-button', StopButton);
-    </script>
-    <script src="js/main.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Slot</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Slot</h1>
+			<div class="slot">
+				<div>
+					<div>
+						<h2 class="num1">$</h2>
+					</div>
+					<stop-button onclick="stop(1)">ストップ</stop-button>
+				</div>
+				<div>
+					<div>
+						<h2 class="num2">$</h2>
+					</div>
+					<stop-button onclick="stop(2)">ストップ</stop-button>
+				</div>
+				<div>
+					<div>
+						<h2 class="num3">$</h2>
+					</div>
+					<stop-button onclick="stop(3)">ストップ</stop-button>
+				</div>
+			</div>
+		</div>
+		<script>
+			class StopButton extends HTMLElement{
+				constructor(){
+					super();
+				}
+			}
+			customElements.define('stop-button', StopButton);
+		</script>
+		<script src="js/main.js"></script>
+	</body>
 </html>
