@@ -2,7 +2,10 @@ const first = document.getElementById("num1"),
 	second = document.getElementById("num2"),
 	third = document.getElementById("num3"),
 	cointag = document.getElementById("coin"),
-	rat = document.getElementsByClassName("rating")[0];
+	rat = document.getElementsByClassName("rating")[0],
+	stb = document.getElementsByTagName("start-button")[0];
+	random = (max, min) => Math.floor(Math.random() * (max - min)) + min,
+	gameclear = random(100000, 10000000);
 function* slotnum() {
 	yield* [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 }
@@ -68,8 +71,6 @@ const stop = x => {
 }
 const changecoin = x => void(cointag.textContent = coin += bet * x);
 const check = (x, y, z) => {
-	const sortedarr = [x, y, z].sort((a, b) => a - b);
-	const arr = [x, y, z];
 	const subarr = [Math.abs(x - y), Math.abs(y - z)].sort((a, b) => a - b);
 	if (x === y && y === z) {
 		switch (x) {
@@ -99,5 +100,11 @@ const check = (x, y, z) => {
 	} else if (x === y || y === z) {
 		rat.textContent = "OK";
 		changecoin(3);
+	}
+	setTimeout(() => rat.textContent = "", 2500);
+	if (coin >= gameclear) {
+		rat.textContent = "Game Clear!";
+		stb.textContent = "もう一度";
+		stb.addEventListener("click", () => location.href = "./index.html");
 	}
 }
