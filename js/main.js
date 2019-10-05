@@ -105,6 +105,6 @@ const check = (x, y, z) => {
 	if (coin >= gameclear) {
 		rat.textContent = "Game Clear!";
 		stb.textContent = "もう一度";
-		stb.addEventListener("click", () => location.href = "./index.html");
+		stb.addEventListener("click", () => location.href = location.href);
 	}
 }
