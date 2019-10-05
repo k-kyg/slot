@@ -1,8 +1,8 @@
-const first = document.getElementById("num1");
-const second = document.getElementById("num2");
-const third = document.getElementById("num3");
-let status = [];
-let playing = false;
+const first = document.getElementById("num1"),
+	second = document.getElementById("num2"),
+	third = document.getElementById("num3");
+let status = [],
+	playing = false;
 function* slotnum() {
 	yield* [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
@@ -17,7 +17,9 @@ window.onkeydown = () => {
 }
 const start = () => {
 	if (playing) return void (0);
-	let fir = slotnum();
+	let fir = slotnum(),
+		snd = slotnum(),
+		tir = slotnum();
 	playing = true;
 	window.f = setInterval(() => {
 		let num = fir.next();
@@ -28,18 +30,18 @@ const start = () => {
 		first.textContent = num.value;
 	}, 32);
 	window.s = setInterval(() => {
-		let num = fir.next();
+		let num = snd.next();
 		if (num.done) {
-			fir = slotnum();
-			num = fir.next();
+			snd = slotnum();
+			num = tir.next();
 		}
 		second.textContent = num.value;
 	}, 64);
 	window.t = setInterval(() => {
-		let num = fir.next();
+		let num = tir.next();
 		if (num.done) {
-			fir = slotnum();
-			num = fir.next();
+			tir = slotnum();
+			num = tir.next();
 		}
 		third.textContent = num.value;
 	}, 16);
