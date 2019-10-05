@@ -1,6 +1,7 @@
 const first = document.getElementById("num1");
 const second = document.getElementById("num2");
 const third = document.getElementById("num3");
+let status = [];
 let playing = false;
 function* slotnum() {
 	yield 0;
@@ -24,6 +25,7 @@ window.onkeydown = () => {
 	}
 }
 const start = () => {
+	if (playing) return void(0);
 	let fir = slotnum();
 	playing = true;
 	window.f = setInterval(() => {
@@ -52,9 +54,16 @@ const start = () => {
 	}, 16);
 }
 const stop = x => {
-	switch (x) {
-		case 1: clearInterval(f); break;
-		case 2: clearInterval(s); break;
-		case 3: clearInterval(t); break;
+	if (playing) {
+		switch (x) {
+			case 1: clearInterval(f); status.push(1); break;
+			case 2: clearInterval(s); status.push(2); break;
+			case 3: clearInterval(t); status.push(3); break;
+		}
+		status = Array.from(new Set(status));
+		if (status.length === 3) {
+			status = [];
+			playing = false;
+		}
 	}
 }
