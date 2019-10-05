@@ -4,16 +4,7 @@ const third = document.getElementById("num3");
 let status = [];
 let playing = false;
 function* slotnum() {
-	yield 0;
-	yield 1;
-	yield 2;
-	yield 3;
-	yield 4;
-	yield 5;
-	yield 6;
-	yield 7;
-	yield 8;
-	yield 9;
+	yield* [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 window.onkeydown = () => {
 	switch (event.keyCode) {
@@ -25,7 +16,7 @@ window.onkeydown = () => {
 	}
 }
 const start = () => {
-	if (playing) return void(0);
+	if (playing) return void (0);
 	let fir = slotnum();
 	playing = true;
 	window.f = setInterval(() => {
