@@ -29,17 +29,23 @@
 					</div>
 					<stop-button id="third" onclick="stop(3)">ストップ</stop-button>
 				</div>
+				<span class="bet">
+					<label for="bet">Bet: </label>
+					<input type="number" id="bet" value="100">
+				</span>
 				<start-button onclick="start()">スタート</start-button>
+				<h2 class="coin">coin：<span id="coin">1000</span></h2>
+				<h1 class="rating"></h1>
 			</div>
 		</div>
 		<script>
-			class StopButton extends HTMLElement{
-				constructor(){
+			class StopButton extends HTMLElement {
+				constructor() {
 					super();
 				}
 			}
-			class StartButton extends HTMLElement{
-				constructor(){
+			class StartButton extends HTMLElement {
+				constructor() {
 					super();
 				}
 			}
