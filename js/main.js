@@ -1,5 +1,3 @@
-const sleep = async (x) => new Promise(r => setTimeout(r, x));
-const arr = [...Array(10).keys()];
 const first = document.getElementById("num1");
 const second = document.getElementById("num2");
 const third = document.getElementById("num3");
