@@ -13,22 +13,23 @@
 			<div class="slot">
 				<div>
 					<div>
-						<h2 class="num1">$</h2>
+						<h2 id="num1">$</h2>
 					</div>
-					<stop-button onclick="stop(1)">ストップ</stop-button>
+					<stop-button id="first" onclick="stop(1)">ストップ</stop-button>
 				</div>
 				<div>
 					<div>
-						<h2 class="num2">$</h2>
+						<h2 id="num2">$</h2>
 					</div>
-					<stop-button onclick="stop(2)">ストップ</stop-button>
+					<stop-button id="second" onclick="stop(2)">ストップ</stop-button>
 				</div>
 				<div>
 					<div>
-						<h2 class="num3">$</h2>
+						<h2 id="num3">$</h2>
 					</div>
-					<stop-button onclick="stop(3)">ストップ</stop-button>
+					<stop-button id="third" onclick="stop(3)">ストップ</stop-button>
 				</div>
+				<start-button onclick="start()">スタート</start-button>
 			</div>
 		</div>
 		<script>
@@ -37,7 +38,13 @@
 					super();
 				}
 			}
+			class StartButton extends HTMLElement{
+				constructor(){
+					super();
+				}
+			}
 			customElements.define('stop-button', StopButton);
+			customElements.define('start-button', StartButton);
 		</script>
 		<script src="js/main.js"></script>
 	</body>

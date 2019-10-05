@@ -4,11 +4,42 @@ $myblue: rgb(0, 153, 255);
 }
 stop-button {
 	display: inline-block;
-	border: 1px solid black;
 	border-radius: 5px;
 	padding: 5px;
 	user-select: none;
 	cursor: pointer;
+	background-color: white;
+	color: $myblue;
+	border: 2px solid $myblue;
+	font-weight: bold;
+	transform: translateY(-100%);
+	transition: 300ms;
+	&:hover {
+		background-color: $myblue;
+		color: white;
+		transition: 150ms;
+	}
+}
+start-button {
+	display: inline-block;
+	position: relative;
+	transform: translateY(130px);
+	font-size: 30px;
+	font-weight: bold;
+	background-color: white;
+	color: $myblue;
+	padding: 5px;
+	border-radius: 10px;
+	user-select: none;
+	border: 2px solid $myblue;
+	cursor: pointer;
+	transition: 300ms;
+	&:hover {
+		background-color: $myblue;
+		color: white;
+		border: 2px solid $myblue;
+		transition: 100ms;
+	}
 }
 .container {
 	position: absolute;
@@ -42,20 +73,6 @@ stop-button {
 			position: relative;
 			width: calc(100% / 3);
 			float: left;
-			> stop-button {
-				border: none;
-				background-color: white;
-				color: $myblue;
-				border: 2px solid $myblue;
-				font-weight: bold;
-				transform: translateY(-100%);
-				transition: 300ms;
-				&:hover {
-					background-color: $myblue;
-					color: white;
-					transition: 150ms;
-				}
-			}
 			> div {
 				position: relative;
 				top: 50%;
