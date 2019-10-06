@@ -37,6 +37,7 @@ const start = () => {
 	try {
 		if (bet > coin) throw new Error("賭け値を所持コインより多くすることはできません");
 		if (bet <= 0) throw new Error("賭け値を0以下にすることはできません");
+		if (!bet) throw new Error("賭け値を入力してください");
 	} catch (e) {
 		alert(e);
 		return void (0);
