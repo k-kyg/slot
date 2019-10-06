@@ -2,6 +2,7 @@ const first = document.getElementById("num1"),
 	second = document.getElementById("num2"),
 	third = document.getElementById("num3"),
 	cointag = document.getElementById("coin"),
+	bettag = document.getElementById("bet"),
 	rat = document.getElementsByClassName("rating")[0],
 	stb = document.getElementsByTagName("start-button")[0],
 	stob = document.querySelectorAll("stop-button"),
@@ -32,7 +33,7 @@ stob.forEach((x, y) => {
 stb.addEventListener("click", () => start());
 const start = () => {
 	if (playing) return void (0);
-	bet = parseInt(document.getElementById("bet").value);
+	bet = parseInt(bettag.value);
 	try {
 		if (bet > coin) throw new Error("賭け値を所持コインより多くすることはできません");
 		if (bet <= 0) throw new Error("賭け値を0以下にすることはできません");
@@ -41,6 +42,7 @@ const start = () => {
 		return void (0);
 	}
 	playing = true;
+	bettag.readOnly = true;
 	rat.textContent = "";
 	cointag.textContent = coin -= bet;
 	window.f = setInterval(() => {
@@ -80,6 +82,7 @@ const stop = x => {
 			status = [];
 			check(...[first.textContent, second.textContent, third.textContent].map(x => parseInt(x)));
 			playing = false;
+			bettag.readOnly = false;
 		}
 	}
 }
