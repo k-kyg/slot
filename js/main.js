@@ -3,7 +3,7 @@ const first = document.getElementById("num1"),
 	third = document.getElementById("num3"),
 	cointag = document.getElementById("coin"),
 	rat = document.getElementsByClassName("rating")[0],
-	stb = document.getElementsByTagName("start-button")[0];
+	stb = document.getElementsByTagName("start-button")[0],
 	random = (max, min) => Math.floor(Math.random() * (max - min)) + min,
 	gameclear = random(100000, 10000000);
 function* slotnum() {
