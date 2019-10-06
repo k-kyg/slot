@@ -4,6 +4,7 @@ const first = document.getElementById("num1"),
 	cointag = document.getElementById("coin"),
 	rat = document.getElementsByClassName("rating")[0],
 	stb = document.getElementsByTagName("start-button")[0],
+	stob = document.querySelectorAll("stop-button"),
 	random = (max, min) => Math.floor(Math.random() * (max - min)) + min,
 	gameclear = random(100000, 10000000);
 function* slotnum() {
@@ -25,6 +26,10 @@ window.onkeydown = () => {
 		default: break;
 	}
 }
+stob.forEach((x, y) => {
+	x.addEventListener("click", () => stop(y + 1));
+});
+stb.addEventListener("click", () => start());
 const start = () => {
 	if (playing) return void (0);
 	bet = parseInt(document.getElementById("bet").value);
@@ -36,6 +41,7 @@ const start = () => {
 		return void (0);
 	}
 	playing = true;
+	rat.textContent = "";
 	cointag.textContent = coin -= bet;
 	window.f = setInterval(() => {
 		let num = fir.next();
@@ -109,7 +115,6 @@ const check = (x, y, z) => {
 		rat.textContent = "OK";
 		changecoin(3);
 	}
-	setTimeout(() => rat.textContent = "", 2500);
 	if (coin >= gameclear) {
 		rat.textContent = "Game Clear!";
 		stb.textContent = "もう一度";

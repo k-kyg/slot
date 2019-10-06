@@ -14,6 +14,7 @@ stop-button {
   font-weight: bold;
   transform: translateY(-100%);
   transition: 300ms;
+  z-index: 3;
   &:hover {
     background-color: $myblue;
     color: white;
