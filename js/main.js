@@ -27,8 +27,16 @@ window.onkeydown = () => {
 }
 const start = () => {
 	if (playing) return void (0);
+	bet = parseInt(document.getElementById("bet").value);
+	try {
+		if (bet > coin) throw new Error("賭け値を所持コインより多くすることはできません");
+		if (bet === 0) throw new Error("賭け値を0にすることはできません");
+	} catch (e) {
+		alert(e);
+		return void (0);
+	}
 	playing = true;
-	bet = parseInt(document.getElementById("bet").value),
+	cointag.textContent = coin -= bet;
 	window.f = setInterval(() => {
 		let num = fir.next();
 		if (num.done) {
@@ -104,6 +112,10 @@ const check = (x, y, z) => {
 	setTimeout(() => rat.textContent = "", 2500);
 	if (coin >= gameclear) {
 		rat.textContent = "Game Clear!";
+		stb.textContent = "もう一度";
+		stb.addEventListener("click", () => location.href = location.href);
+	} else if (coin <= 0) {
+		rat.textContent = "Game Over...";
 		stb.textContent = "もう一度";
 		stb.addEventListener("click", () => location.href = location.href);
 	}
