@@ -82,7 +82,7 @@ const stop = x => {
 			status = [];
 			check(...[first.textContent, second.textContent, third.textContent].map(x => parseInt(x)));
 			playing = false;
-			bettag.readOnly = false;
+			setTimeout(() => bettag.readOnly = false, 100);
 		}
 	}
 }
