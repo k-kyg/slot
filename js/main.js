@@ -35,7 +35,7 @@ const start = () => {
 	bet = parseInt(document.getElementById("bet").value);
 	try {
 		if (bet > coin) throw new Error("賭け値を所持コインより多くすることはできません");
-		if (bet === 0) throw new Error("賭け値を0にすることはできません");
+		if (bet <= 0) throw new Error("賭け値を0以下にすることはできません");
 	} catch (e) {
 		alert(e);
 		return void (0);
