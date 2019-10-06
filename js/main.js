@@ -83,7 +83,7 @@ const stop = x => {
 		}
 	}
 }
-const changecoin = x => void(cointag.textContent = coin += bet * x);
+const changecoin = x => void (cointag.textContent = coin += bet * x);
 const check = (x, y, z) => {
 	const subarr = [Math.abs(x - y), Math.abs(y - z)].sort((a, b) => a - b);
 	if (x === y && y === z) {
