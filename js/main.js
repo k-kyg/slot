@@ -6,7 +6,7 @@ const first = document.getElementById("num1"),
 	rat = document.getElementsByClassName("rating")[0],
 	stb = document.getElementsByTagName("start-button")[0],
 	stob = document.querySelectorAll("stop-button"),
-	random = (max, min) => Math.floor(Math.random() * (max - min)) + min,
+	random = (min, max) => Math.floor(Math.random() * (max - min)) + min,
 	gameclear = random(100000, 10000000);
 function* slotnum() {
 	yield* [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
