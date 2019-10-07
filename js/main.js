@@ -17,7 +17,10 @@ let status = [],
 	fir = slotnum(),
 	snd = slotnum(),
 	tir = slotnum(),
-	bet;
+	bet,
+	f,
+	s,
+	t;
 window.onkeydown = () => {
 	switch (event.keyCode) {
 		case 13: start(); break;
@@ -46,7 +49,7 @@ const start = () => {
 	bettag.readOnly = true;
 	rat.textContent = "";
 	cointag.textContent = coin -= bet;
-	window.f = setInterval(() => {
+	f = setInterval(() => {
 		let num = fir.next();
 		if (num.done) {
 			fir = slotnum();
@@ -54,7 +57,7 @@ const start = () => {
 		}
 		first.textContent = num.value;
 	}, 32);
-	window.s = setInterval(() => {
+	s = setInterval(() => {
 		let num = snd.next();
 		if (num.done) {
 			snd = slotnum();
@@ -62,7 +65,7 @@ const start = () => {
 		}
 		second.textContent = num.value;
 	}, 64);
-	window.t = setInterval(() => {
+	t = setInterval(() => {
 		let num = tir.next();
 		if (num.done) {
 			tir = slotnum();
