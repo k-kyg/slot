@@ -132,3 +132,4 @@ const check = (x, y, z) => {
 		stb.addEventListener("click", () => location.reload());
 	}
 }
+Object.freeze(window);
